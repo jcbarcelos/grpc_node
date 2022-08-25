@@ -4,6 +4,7 @@ syntax = "proto3";
 service TaskService {
   rpc FindAllTask (Empty) returns (TaskList) {}
   rpc CreateTask (Task) returns (Task) {}
+  rpc FindIdTask (TaskId) returns (Task) {}
 }
 
 // --Mensagens
@@ -15,4 +16,7 @@ message Task {
 }
 message TaskList {
   repeated Task tasks = 1;
+}
+message TaskId {
+   int32 id = 1;
 }
