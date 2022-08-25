@@ -1,0 +1,13 @@
+version: "3.9" # optional since v1.27.0
+services:
+  web:
+    build: .
+    container_name: nodegrpc
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./:/code
+    command: "npm run start"
+
+volumes:
+  logvolume01: {}

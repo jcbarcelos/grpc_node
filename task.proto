@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+// --Services
+service TaskService {
+  rpc FindAllTask (Empty) returns (TaskList) {}
+  rpc CreateTask (Task) returns (Task) {}
+}
+
+// --Mensagens
+message Empty {}
+
+message Task {
+  required int32 idTask = 1;
+  required string titleTask = 2;
+}
+message TaskList {
+  repeated Task tasks = 1;
+}
